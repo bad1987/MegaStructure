@@ -13,9 +13,11 @@ namespace MegaStructure
     public partial class Familles : Form
     {
         private DatabaseLite lite;
+        private int loaded;
         public Familles()
         {
             InitializeComponent();
+            loaded = 0;
             lite = new DatabaseLite();
             lite.creatConnection();
             loadFamille();
@@ -29,7 +31,12 @@ namespace MegaStructure
         private void nouveauFamille_Click(object sender, EventArgs e)
         {
             CreerFamilles cf = new CreerFamilles();
-            cf.Show();
+            DialogResult result = cf.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                loadFamille();
+            }
         }
 
         public void loadFamille()
@@ -44,11 +51,54 @@ namespace MegaStructure
                 row[1] = famille.Value;
                 listefamilleDatagrid.Rows.Add(row);
             }
+
+            if(loaded == 1 && listefamilleDatagrid.Rows.Count > 0)
+            {
+                listefamilleDatagrid.ClearSelection();
+            }
         }
 
         private void Familles_FormClosing(object sender, FormClosingEventArgs e)
         {
             lite.closeConnection();
+        }
+
+        private void Familles_Load(object sender, EventArgs e)
+        {
+            if(listefamilleDatagrid.Rows.Count > 0)
+            {
+                listefamilleDatagrid.ClearSelection();
+                loaded = 1;
+            }
+        }
+
+        private void supprimer_Click(object sender, EventArgs e)
+        {
+            if(listefamilleDatagrid.SelectedRows.Count > 0)
+            {
+                string code = listefamilleDatagrid.SelectedRows[0].Cells[0].Value.ToString();
+                if (lite.isUsed(code))
+                {
+                    String msg = @"Vous etes sur le point de supprimer une famille utilisee par certains materiaux.
+                            Pour confirmer la suppression, cliquez sur [OK]";
+                    if (MessageBox.Show(msg, "Erreur de suppression", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                    {
+                        lite.deleteFromFamille(code);
+                        loadFamille();
+                    }
+                }
+                else
+                {
+                    lite.deleteFromFamille(code);
+                    loadFamille();
+                }
+                
+                
+            }
+            else
+            {
+                MessageBox.Show("Suppression impossible! aucun element selectionne", "Erreur de suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

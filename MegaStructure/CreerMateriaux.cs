@@ -44,7 +44,7 @@ namespace MegaStructure
             String request = @"INSERT INTO F_MATERIEL (MA_DESIGN,MA_DATE,FA_CODE) 
                         VALUES('{0}','{1}','{2}')
                     ";
-            request = String.Format(request, designArt, date, refFamille);
+            request = String.Format(request, designArt.ToUpper(), date, refFamille);
 
 
             SQLiteCommand cmd = new SQLiteCommand(request, lite.getConnector());

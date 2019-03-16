@@ -135,6 +135,40 @@ namespace MegaStructure
             cmd.ExecuteNonQuery();
         }
 
+        public void deleteFromFamille(String code)
+        {
+            String request = "DELETE FROM F_FAMILLE WHERE FA_CODE = '{0}'";
+            String request2 = "UPDATE F_MATERIEL SET FA_CODE = 'MATDIV' WHERE FA_CODE = '{0}'";
+            request2 = string.Format(request2, code);
+            request = string.Format(request, code);
+
+            //mise a jour de la table materiel
+            SQLiteCommand cmd = new SQLiteCommand(request2, this.conn);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand(request, this.conn);
+            cmd.ExecuteNonQuery();
+        }
+
+        public Boolean isUsed(String code)
+        {
+            Boolean result = false;
+            String request = "SELECT * FROM F_MATERIEL,F_FAMILLE WHERE F_FAMILLE.FA_CODE=F_MATERIEL.FA_CODE AND F_FAMILLE.FA_CODE = '{0}' LIMIT 1";
+            request = string.Format(request, code);
+            using(SQLiteCommand cmd = new SQLiteCommand(request, conn))
+            {
+                using(SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        result = true;
+                    }
+                }
+            }
+
+            return result;
+        }
+
         public void createTableMateriel()
         {
             String request = @"

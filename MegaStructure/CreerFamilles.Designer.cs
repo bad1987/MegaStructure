@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fermer = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.validerFamille);
             this.panel1.Controls.Add(this.familleDesign);
@@ -51,7 +53,7 @@
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 173);
+            this.panel1.Size = new System.Drawing.Size(541, 173);
             this.panel1.TabIndex = 0;
             // 
             // validerFamille
@@ -70,7 +72,7 @@
             this.familleDesign.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.familleDesign.Location = new System.Drawing.Point(124, 77);
             this.familleDesign.Name = "familleDesign";
-            this.familleDesign.Size = new System.Drawing.Size(430, 22);
+            this.familleDesign.Size = new System.Drawing.Size(407, 22);
             this.familleDesign.TabIndex = 1;
             this.familleDesign.KeyDown += new System.Windows.Forms.KeyEventHandler(this.familleDesign_KeyDown);
             // 
@@ -103,20 +105,47 @@
             // 
             // fermer
             // 
+            this.fermer.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.fermer.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.fermer.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fermer.FlatAppearance.BorderSize = 2;
+            this.fermer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumAquamarine;
+            this.fermer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.fermer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fermer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fermer.Location = new System.Drawing.Point(469, 201);
+            this.fermer.Location = new System.Drawing.Point(381, 200);
             this.fermer.Name = "fermer";
-            this.fermer.Size = new System.Drawing.Size(75, 23);
+            this.fermer.Size = new System.Drawing.Size(75, 27);
             this.fermer.TabIndex = 3;
-            this.fermer.Text = "Fermer";
-            this.fermer.UseVisualStyleBackColor = true;
+            this.fermer.Text = "Ok";
+            this.fermer.UseVisualStyleBackColor = false;
             this.fermer.Click += new System.EventHandler(this.fermer_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancel.FlatAppearance.BorderSize = 2;
+            this.cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumAquamarine;
+            this.cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel.Location = new System.Drawing.Point(478, 200);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(75, 27);
+            this.cancel.TabIndex = 3;
+            this.cancel.Text = "Annuler";
+            this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.fermer_Click);
             // 
             // CreerFamilles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 236);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(565, 239);
+            this.Controls.Add(this.cancel);
             this.Controls.Add(this.fermer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -142,5 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button validerFamille;
         private System.Windows.Forms.Button fermer;
+        private System.Windows.Forms.Button cancel;
     }
 }
