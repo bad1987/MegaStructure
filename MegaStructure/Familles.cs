@@ -100,5 +100,30 @@ namespace MegaStructure
                 MessageBox.Show("Suppression impossible! aucun element selectionne", "Erreur de suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ouvrirFamille_Click(object sender, EventArgs e)
+        {
+            if(listefamilleDatagrid.SelectedRows.Count > 0)
+            {
+                String code, design;
+                code = listefamilleDatagrid.SelectedRows[0].Cells[0].Value.ToString();
+                design = listefamilleDatagrid.SelectedRows[0].Cells[1].Value.ToString();
+                //MessageBox.Show(code + ' ' + design);
+
+                ModifierFamille modfam = new ModifierFamille(code, design);
+                if(modfam.ShowDialog() == DialogResult.OK)
+                {
+                    loadFamille();
+                    if(listefamilleDatagrid.SelectedRows.Count > 0)
+                    {
+                        listefamilleDatagrid.ClearSelection();
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
     }
 }

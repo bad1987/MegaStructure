@@ -33,10 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.qteHs = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.proevenance = new System.Windows.Forms.ComboBox();
+            this.provenance = new System.Windows.Forms.ComboBox();
             this.valider = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.fermer = new System.Windows.Forms.Button();
+            this.ok = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +55,12 @@
             // 
             this.materiel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.materiel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.materiel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materiel.FormattingEnabled = true;
             this.materiel.Location = new System.Drawing.Point(88, 15);
             this.materiel.Name = "materiel";
-            this.materiel.Size = new System.Drawing.Size(285, 21);
-            this.materiel.TabIndex = 1;
+            this.materiel.Size = new System.Drawing.Size(285, 25);
+            this.materiel.TabIndex = 0;
             // 
             // label2
             // 
@@ -72,10 +74,11 @@
             // 
             // qteHs
             // 
+            this.qteHs.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qteHs.Location = new System.Drawing.Point(88, 74);
             this.qteHs.Name = "qteHs";
-            this.qteHs.Size = new System.Drawing.Size(144, 20);
-            this.qteHs.TabIndex = 2;
+            this.qteHs.Size = new System.Drawing.Size(144, 25);
+            this.qteHs.TabIndex = 1;
             // 
             // label3
             // 
@@ -87,38 +90,40 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Provenance";
             // 
-            // proevenance
+            // provenance
             // 
-            this.proevenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.proevenance.FormattingEnabled = true;
-            this.proevenance.Items.AddRange(new object[] {
-            "Stock reel encours",
-            "inventaire initial"});
-            this.proevenance.Location = new System.Drawing.Point(367, 74);
-            this.proevenance.Name = "proevenance";
-            this.proevenance.Size = new System.Drawing.Size(212, 21);
-            this.proevenance.TabIndex = 3;
+            this.provenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.provenance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.provenance.FormattingEnabled = true;
+            this.provenance.Location = new System.Drawing.Point(367, 74);
+            this.provenance.Name = "provenance";
+            this.provenance.Size = new System.Drawing.Size(212, 25);
+            this.provenance.TabIndex = 2;
             // 
             // valider
             // 
             this.valider.BackColor = System.Drawing.SystemColors.Highlight;
+            this.valider.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.valider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.valider.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valider.Location = new System.Drawing.Point(245, 138);
             this.valider.Name = "valider";
             this.valider.Size = new System.Drawing.Size(75, 30);
-            this.valider.TabIndex = 4;
+            this.valider.TabIndex = 3;
             this.valider.Text = "Valider";
             this.valider.UseVisualStyleBackColor = false;
+            this.valider.Click += new System.EventHandler(this.valider_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.materiel);
             this.panel1.Controls.Add(this.valider);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.proevenance);
+            this.panel1.Controls.Add(this.provenance);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.qteHs);
             this.panel1.Controls.Add(this.label3);
@@ -129,22 +134,46 @@
             // 
             // fermer
             // 
+            this.fermer.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.fermer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fermer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.fermer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.fermer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fermer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fermer.Location = new System.Drawing.Point(517, 242);
+            this.fermer.Location = new System.Drawing.Point(517, 236);
             this.fermer.Name = "fermer";
-            this.fermer.Size = new System.Drawing.Size(75, 23);
-            this.fermer.TabIndex = 4;
+            this.fermer.Size = new System.Drawing.Size(75, 29);
+            this.fermer.TabIndex = 5;
             this.fermer.Text = "Fermer";
-            this.fermer.UseVisualStyleBackColor = true;
+            this.fermer.UseVisualStyleBackColor = false;
             this.fermer.Click += new System.EventHandler(this.fermer_Click);
+            // 
+            // ok
+            // 
+            this.ok.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ok.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ok.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.ok.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ok.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ok.Location = new System.Drawing.Point(421, 236);
+            this.ok.Name = "ok";
+            this.ok.Size = new System.Drawing.Size(75, 29);
+            this.ok.TabIndex = 4;
+            this.ok.Text = "OK";
+            this.ok.UseVisualStyleBackColor = false;
+            this.ok.Click += new System.EventHandler(this.fermer_Click);
             // 
             // EntreeHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(616, 277);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ok);
             this.Controls.Add(this.fermer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EntreeHS";
@@ -164,9 +193,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox qteHs;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox proevenance;
+        private System.Windows.Forms.ComboBox provenance;
         private System.Windows.Forms.Button valider;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button fermer;
+        private System.Windows.Forms.Button ok;
     }
 }

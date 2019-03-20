@@ -165,6 +165,24 @@
     <Compile Include="Materiaux.Designer.cs">
       <DependentUpon>Materiaux.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifierDepot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierDepot.Designer.cs">
+      <DependentUpon>ModifierDepot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierFamille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierFamille.Designer.cs">
+      <DependentUpon>ModifierFamille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierMateriel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifierMateriel.Designer.cs">
+      <DependentUpon>ModifierMateriel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortieHS.cs">
@@ -179,6 +197,7 @@
     <Compile Include="StatsParMateriaux.Designer.cs">
       <DependentUpon>StatsParMateriaux.cs</DependentUpon>
     </Compile>
+    <Compile Include="traitementHS.cs" />
     <EmbeddedResource Include="ChoixTypeDoc.resx">
       <DependentUpon>ChoixTypeDoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +236,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materiaux.resx">
       <DependentUpon>Materiaux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierDepot.resx">
+      <DependentUpon>ModifierDepot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierFamille.resx">
+      <DependentUpon>ModifierFamille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifierMateriel.resx">
+      <DependentUpon>ModifierMateriel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

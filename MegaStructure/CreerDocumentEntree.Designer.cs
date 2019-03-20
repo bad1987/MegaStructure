@@ -51,10 +51,10 @@
             this.ligneDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ligneQuant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ligneMo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ok = new System.Windows.Forms.Button();
-            this.annuler = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.supprimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.ok = new System.Windows.Forms.Button();
+            this.annuler = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materiauxDatagrid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -220,7 +220,7 @@
             this.materiauxDatagrid.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -250,28 +250,42 @@
             this.ligneRef.HeaderText = "REFERENCE";
             this.ligneRef.Name = "ligneRef";
             this.ligneRef.ReadOnly = true;
-            this.ligneRef.Width = 97;
+            this.ligneRef.Width = 118;
             // 
             // ligneDesign
             // 
             this.ligneDesign.HeaderText = "DESIGNATION";
             this.ligneDesign.Name = "ligneDesign";
             this.ligneDesign.ReadOnly = true;
-            this.ligneDesign.Width = 106;
+            this.ligneDesign.Width = 132;
             // 
             // ligneQuant
             // 
             this.ligneQuant.HeaderText = "QUANTITE";
             this.ligneQuant.Name = "ligneQuant";
             this.ligneQuant.ReadOnly = true;
-            this.ligneQuant.Width = 87;
+            this.ligneQuant.Width = 109;
             // 
             // ligneMo
             // 
             this.ligneMo.HeaderText = "MOTIF";
             this.ligneMo.Name = "ligneMo";
             this.ligneMo.ReadOnly = true;
-            this.ligneMo.Width = 65;
+            this.ligneMo.Width = 79;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.supprimer});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 26);
+            // 
+            // supprimer
+            // 
+            this.supprimer.Name = "supprimer";
+            this.supprimer.Size = new System.Drawing.Size(129, 22);
+            this.supprimer.Text = "Supprimer";
+            this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
             // 
             // ok
             // 
@@ -310,20 +324,6 @@
             this.annuler.Text = "Annuler";
             this.annuler.UseVisualStyleBackColor = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.supprimer});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 26);
-            // 
-            // supprimer
-            // 
-            this.supprimer.Name = "supprimer";
-            this.supprimer.Size = new System.Drawing.Size(129, 22);
-            this.supprimer.Text = "Supprimer";
-            this.supprimer.Click += new System.EventHandler(this.supprimer_Click);
-            // 
             // CreerDocumentEntree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +337,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "CreerDocumentEntree";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Document d\'Entree";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

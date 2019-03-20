@@ -454,7 +454,7 @@ namespace MegaStructure
 
         public String getLastLigneMvtPiece(int mo_type)
         {
-            String request = @"SELECT MO_PIECE FROM F_LIGNEMOUVEMENT WHERE MO_TYPE={0} ORDER BY MO_NO DESC LIMIT 1";
+            String request = @"SELECT MO_PIECE FROM F_LIGNEMOUVEMENT WHERE MO_TYPE={0} AND MO_PIECE LIKE '__M%' ORDER BY MO_NO DESC LIMIT 1";
             String piece = "";
             request = String.Format(request, mo_type);
             using(SQLiteCommand cmd = new SQLiteCommand(request, conn))
@@ -470,6 +470,24 @@ namespace MegaStructure
             return piece;
         }
 
-        
+        public String getLastLigneMvtPieceHS(int mo_type)
+        {
+            String request = @"SELECT MO_PIECE FROM F_LIGNEMOUVEMENT WHERE MO_TYPE={0} AND MO_PIECE LIKE '%HS%' ORDER BY MO_NO DESC LIMIT 1";
+            String piece = "";
+            request = String.Format(request, mo_type);
+            using (SQLiteCommand cmd = new SQLiteCommand(request, conn))
+            {
+                using (SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        piece = dr.GetString(0);
+                    }
+                }
+            }
+            return piece;
+        }
+
+
     }
 }

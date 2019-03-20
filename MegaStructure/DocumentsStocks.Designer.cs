@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ligneStock = new System.Windows.Forms.DataGridView();
             this.typeDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numPiece = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,21 +60,21 @@
             // 
             this.ligneStock.AllowUserToAddRows = false;
             this.ligneStock.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ligneStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ligneStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ligneStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ligneStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ligneStock.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ligneStock.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ligneStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ligneStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ligneStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ligneStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.typeDoc,
@@ -88,49 +88,49 @@
             this.ligneStock.MultiSelect = false;
             this.ligneStock.Name = "ligneStock";
             this.ligneStock.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ligneStock.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ligneStock.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.ligneStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ligneStock.Size = new System.Drawing.Size(577, 405);
+            this.ligneStock.Size = new System.Drawing.Size(656, 405);
             this.ligneStock.TabIndex = 1;
             // 
             // typeDoc
             // 
             this.typeDoc.HeaderText = "Type";
             this.typeDoc.Name = "typeDoc";
-            this.typeDoc.Width = 56;
+            this.typeDoc.Width = 62;
             // 
             // numPiece
             // 
             this.numPiece.HeaderText = "Num Piece";
             this.numPiece.Name = "numPiece";
-            this.numPiece.Width = 78;
+            this.numPiece.Width = 91;
             // 
             // designMat
             // 
             this.designMat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.designMat.HeaderText = "Designation";
             this.designMat.Name = "designMat";
-            this.designMat.Width = 88;
+            this.designMat.Width = 102;
             // 
             // dateMouv
             // 
             this.dateMouv.HeaderText = "Date";
             this.dateMouv.Name = "dateMouv";
-            this.dateMouv.Width = 55;
+            this.dateMouv.Width = 62;
             // 
             // qteTotal
             // 
             this.qteTotal.HeaderText = "Quantite";
             this.qteTotal.Name = "qteTotal";
-            this.qteTotal.Width = 72;
+            this.qteTotal.Width = 83;
             // 
             // motif
             // 
             this.motif.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.motif.HeaderText = "Motif du mouvement";
             this.motif.Name = "motif";
-            this.motif.Width = 117;
+            this.motif.Width = 141;
             // 
             // filtreLigneStock
             // 
@@ -155,7 +155,7 @@
             this.nouveauDoc.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.nouveauDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nouveauDoc.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nouveauDoc.Location = new System.Drawing.Point(583, 476);
+            this.nouveauDoc.Location = new System.Drawing.Point(668, 476);
             this.nouveauDoc.Name = "nouveauDoc";
             this.nouveauDoc.Size = new System.Drawing.Size(75, 27);
             this.nouveauDoc.TabIndex = 3;
@@ -173,7 +173,7 @@
             this.fermerDocStock.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.fermerDocStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fermerDocStock.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fermerDocStock.Location = new System.Drawing.Point(674, 476);
+            this.fermerDocStock.Location = new System.Drawing.Point(759, 476);
             this.fermerDocStock.Name = "fermerDocStock";
             this.fermerDocStock.Size = new System.Drawing.Size(75, 27);
             this.fermerDocStock.TabIndex = 3;
@@ -305,13 +305,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(791, 515);
+            this.ClientSize = new System.Drawing.Size(870, 515);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fermerDocStock);
             this.Controls.Add(this.nouveauDoc);
             this.Controls.Add(this.ligneStock);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MaximizeBox = false;
             this.Name = "DocumentsStocks";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -35,6 +35,11 @@
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.deconnexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.outils = new System.Windows.Forms.ToolStripMenuItem();
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restorerLaBaseDeDonneesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.structure = new System.Windows.Forms.ToolStripMenuItem();
             this.familleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,11 +57,6 @@
             this.enRuptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruptureProcheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aide = new System.Windows.Forms.ToolStripMenuItem();
-            this.outilsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restorerLaBaseDeDonneesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@
             this.fichier.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fermerToolStripMenuItem,
             this.utilisateurToolStripMenuItem,
-            this.outilsToolStripMenuItem});
+            this.outils});
             this.fichier.ForeColor = System.Drawing.Color.White;
             this.fichier.Name = "fichier";
             this.fichier.Size = new System.Drawing.Size(60, 21);
@@ -118,6 +118,45 @@
             this.deconnexion.Size = new System.Drawing.Size(153, 22);
             this.deconnexion.Text = "Deconnexion";
             this.deconnexion.Click += new System.EventHandler(this.deconnexion_Click);
+            // 
+            // outils
+            // 
+            this.outils.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem,
+            this.restorerLaBaseDeDonneesToolStripMenuItem,
+            this.importerToolStripMenuItem,
+            this.exporterToolStripMenuItem});
+            this.outils.Name = "outils";
+            this.outils.Size = new System.Drawing.Size(180, 22);
+            this.outils.Text = "Outils";
+            // 
+            // sauvegarderLaBaseDeDonneesToolStripMenuItem
+            // 
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Name = "sauvegarderLaBaseDeDonneesToolStripMenuItem";
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Text = "Sauvegarder";
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderLaBaseDeDonneesToolStripMenuItem_Click);
+            // 
+            // restorerLaBaseDeDonneesToolStripMenuItem
+            // 
+            this.restorerLaBaseDeDonneesToolStripMenuItem.Name = "restorerLaBaseDeDonneesToolStripMenuItem";
+            this.restorerLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restorerLaBaseDeDonneesToolStripMenuItem.Text = "Restorer";
+            this.restorerLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.restorerLaBaseDeDonneesToolStripMenuItem_Click);
+            // 
+            // importerToolStripMenuItem
+            // 
+            this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
+            this.importerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importerToolStripMenuItem.Text = "Importer";
+            this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
+            // 
+            // exporterToolStripMenuItem
+            // 
+            this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
+            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exporterToolStripMenuItem.Text = "Exporter";
+            this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
             // 
             // structure
             // 
@@ -259,45 +298,6 @@
             this.aide.MouseLeave += new System.EventHandler(this.aide_MouseLeave);
             this.aide.MouseHover += new System.EventHandler(this.aide_MouseHover);
             // 
-            // outilsToolStripMenuItem
-            // 
-            this.outilsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem,
-            this.restorerLaBaseDeDonneesToolStripMenuItem,
-            this.importerToolStripMenuItem,
-            this.exporterToolStripMenuItem});
-            this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.outilsToolStripMenuItem.Text = "Outils";
-            // 
-            // sauvegarderLaBaseDeDonneesToolStripMenuItem
-            // 
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Name = "sauvegarderLaBaseDeDonneesToolStripMenuItem";
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Text = "Sauvegarder";
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderLaBaseDeDonneesToolStripMenuItem_Click);
-            // 
-            // restorerLaBaseDeDonneesToolStripMenuItem
-            // 
-            this.restorerLaBaseDeDonneesToolStripMenuItem.Name = "restorerLaBaseDeDonneesToolStripMenuItem";
-            this.restorerLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.restorerLaBaseDeDonneesToolStripMenuItem.Text = "Restorer";
-            this.restorerLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.restorerLaBaseDeDonneesToolStripMenuItem_Click);
-            // 
-            // importerToolStripMenuItem
-            // 
-            this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importerToolStripMenuItem.Text = "Importer";
-            this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
-            // 
-            // exporterToolStripMenuItem
-            // 
-            this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
-            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exporterToolStripMenuItem.Text = "Exporter";
-            this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,7 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDesHSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entreeHSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sortieHSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem outilsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outils;
         private System.Windows.Forms.ToolStripMenuItem sauvegarderLaBaseDeDonneesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restorerLaBaseDeDonneesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importerToolStripMenuItem;

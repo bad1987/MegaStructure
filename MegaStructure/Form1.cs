@@ -82,6 +82,7 @@ namespace MegaStructure
             etat.Enabled = false;
             deconnexion.Enabled = false;
             connexion.Enabled = true;
+            outils.Enabled = false;
         }
 
         private void connectedUser()
@@ -91,6 +92,7 @@ namespace MegaStructure
             etat.Enabled = true;
             deconnexion.Enabled = true;
             connexion.Enabled = false;
+            outils.Enabled = true;
         }
 
         private void fichierToolStripMenuItem_MouseHover(object sender, EventArgs e)
