@@ -20,13 +20,54 @@ namespace MegaStructure
         private DatabaseLite lite;
         private ConnexionUtilisateur user;
 
+        //form objects
+        Materiaux ma;
+        Familles fa;
+        Depots de;
+        EntreeHS ehs;
+        SortieHS shs;
+        GestionRisques risque;
+        StatsParMateriaux spm;
+        DocumentsStocks ds;
+
+        //position
+        private int X, Y;
+
         public Form1()
         {
             InitializeComponent();
             lite = new DatabaseLite();
             lite.initDatabase();
-            //connection();
-            connectedUser();
+            connection();
+            //connectedUser();
+
+            //init objects
+            fa = null;
+            ma = null;
+            de = null;
+            ehs = null;
+            shs = null;
+            risque = null;
+            spm = null;
+            ds = null;
+
+            //position
+            X = this.Top;
+            Y = this.Left;
+
+            menuStrip1.BackColor = Color.Black;
+            menuStrip1.ForeColor = Color.White;
+        }
+
+        public void closeAllForms()
+        {
+            for(int i = Application.OpenForms.Count - 1; i>=0; i--)
+            {
+                if(Application.OpenForms[i].Name != "Form1")
+                {
+                    Application.OpenForms[i].Close();
+                }
+            }
         }
 
         private void connection()
@@ -185,44 +226,100 @@ namespace MegaStructure
 
         private void documentsDeStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DocumentsStocks ds = new DocumentsStocks();
-            ds.Show();
+            if (ds == null)
+            {
+                DocumentsStocks ds = new DocumentsStocks();
+                ds.SetDesktopLocation(this.Top + 25, this.Left + 40);
+                ds.Show();
+            }
+            else
+            {
+                ds.Activate();
+            }
         }
 
         private void parMaterielToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StatsParMateriaux spm = new StatsParMateriaux();
-            spm.Show();
+            if (spm == null)
+            {
+                StatsParMateriaux spm = new StatsParMateriaux();
+                spm.Show();
+            }
+            else
+            {
+                spm.Activate();
+            }
         }
 
         private void familleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Familles fa = new Familles();
+            fa = new Familles();
+            //fa.SetDesktopLocation(this.Top + 25, this.Left + 40);
             fa.Show();
+            /*
+            if (fa == null)
+            {
+                fa = new Familles();
+                fa.Show();
+            }
+            else
+            {
+                fa.Activate();
+            }*/
         }
 
         private void materielToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Materiaux ma = new Materiaux();
-            ma.Show();
+            if (ma == null)
+            {
+                Materiaux ma = new Materiaux();
+                ma.SetDesktopLocation(this.Top + 25, this.Left + 40);
+                ma.Show();
+            }
+            else
+            {
+                ma.Activate();
+            }
         }
 
         private void depotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Depots de = new Depots();
-            de.Show();
+            if (de == null)
+            {
+                Depots de = new Depots();
+                de.Show();
+            }
+            else
+            {
+                de.Activate();
+            }
         }
 
         private void entreeHSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EntreeHS ehs = new EntreeHS();
-            ehs.Show();
+            if (ehs == null)
+            {
+                EntreeHS ehs = new EntreeHS();
+                ehs.Show();
+            }
+            else
+            {
+                ehs.Activate();
+            }
         }
 
         private void sortieHSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SortieHS shs = new SortieHS();
-            shs.Show();
+            
+            if (shs == null)
+            {
+                shs = new SortieHS();
+                shs.Show();
+            }
+            else
+            {
+                shs.Activate();
+            }
         }
 
         private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -245,6 +342,7 @@ namespace MegaStructure
 
         private void deconnexion_Click(object sender, EventArgs e)
         {
+            closeAllForms();
             guessAccess();
             //connected = false;
         }
@@ -269,6 +367,20 @@ namespace MegaStructure
         private void importerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lite.importer();
+        }
+
+        private void rupturesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (risque == null)
+            {
+                GestionRisques risque = new GestionRisques();
+                risque.SetDesktopLocation(this.Top + 25, this.Left + 40);
+                risque.Show();
+            }
+            else
+            {
+                risque.Activate();
+            }
         }
     }
 }

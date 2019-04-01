@@ -32,17 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listeMateriauxDatagrid = new System.Windows.Forms.DataGridView();
+            this.REFMAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Design = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QteMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QteReel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ouvrirMateriaux = new System.Windows.Forms.Button();
             this.nouveauMateriaux = new System.Windows.Forms.Button();
             this.fermerMateriaux = new System.Windows.Forms.Button();
             this.inputSearch = new System.Windows.Forms.TextBox();
             this.rechercheMateriaux = new System.Windows.Forms.Button();
             this.print = new System.Windows.Forms.Button();
-            this.REFMAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Design = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QteMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QteReel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listeMateriauxDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +82,42 @@
             this.listeMateriauxDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listeMateriauxDatagrid.Size = new System.Drawing.Size(569, 408);
             this.listeMateriauxDatagrid.TabIndex = 0;
+            // 
+            // REFMAT
+            // 
+            this.REFMAT.HeaderText = "Reference";
+            this.REFMAT.Name = "REFMAT";
+            this.REFMAT.ReadOnly = true;
+            this.REFMAT.Visible = false;
+            this.REFMAT.Width = 63;
+            // 
+            // Design
+            // 
+            this.Design.HeaderText = "Designation";
+            this.Design.Name = "Design";
+            this.Design.ReadOnly = true;
+            this.Design.Width = 88;
+            // 
+            // QteMin
+            // 
+            this.QteMin.HeaderText = "Quantite Minimum";
+            this.QteMin.Name = "QteMin";
+            this.QteMin.ReadOnly = true;
+            this.QteMin.Width = 106;
+            // 
+            // QteReel
+            // 
+            this.QteReel.HeaderText = "Quantite Reelle";
+            this.QteReel.Name = "QteReel";
+            this.QteReel.ReadOnly = true;
+            this.QteReel.Width = 96;
+            // 
+            // HS
+            // 
+            this.HS.HeaderText = "Hors Service";
+            this.HS.Name = "HS";
+            this.HS.ReadOnly = true;
+            this.HS.Width = 86;
             // 
             // ouvrirMateriaux
             // 
@@ -171,48 +207,13 @@
             this.print.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.print.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.print.Location = new System.Drawing.Point(479, 14);
+            this.print.Location = new System.Drawing.Point(492, 12);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(89, 29);
             this.print.TabIndex = 3;
-            this.print.Text = "Imprimer";
+            this.print.Text = "Exporter";
             this.print.UseVisualStyleBackColor = false;
-            // 
-            // REFMAT
-            // 
-            this.REFMAT.HeaderText = "Reference";
-            this.REFMAT.Name = "REFMAT";
-            this.REFMAT.ReadOnly = true;
-            this.REFMAT.Visible = false;
-            this.REFMAT.Width = 63;
-            // 
-            // Design
-            // 
-            this.Design.HeaderText = "Designation";
-            this.Design.Name = "Design";
-            this.Design.ReadOnly = true;
-            this.Design.Width = 88;
-            // 
-            // QteMin
-            // 
-            this.QteMin.HeaderText = "Quantite Minimum";
-            this.QteMin.Name = "QteMin";
-            this.QteMin.ReadOnly = true;
-            this.QteMin.Width = 106;
-            // 
-            // QteReel
-            // 
-            this.QteReel.HeaderText = "Quantite Reelle";
-            this.QteReel.Name = "QteReel";
-            this.QteReel.ReadOnly = true;
-            this.QteReel.Width = 96;
-            // 
-            // HS
-            // 
-            this.HS.HeaderText = "Hors Service";
-            this.HS.Name = "HS";
-            this.HS.ReadOnly = true;
-            this.HS.Width = 86;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
             // Materiaux
             // 
@@ -232,8 +233,9 @@
             this.MinimizeBox = false;
             this.Name = "Materiaux";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Materiaux";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Materiaux_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.listeMateriauxDatagrid)).EndInit();
             this.ResumeLayout(false);

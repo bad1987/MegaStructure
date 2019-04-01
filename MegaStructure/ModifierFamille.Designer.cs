@@ -81,7 +81,7 @@
             this.enregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enregistrer.Location = new System.Drawing.Point(108, 138);
             this.enregistrer.Name = "enregistrer";
-            this.enregistrer.Size = new System.Drawing.Size(83, 33);
+            this.enregistrer.Size = new System.Drawing.Size(87, 33);
             this.enregistrer.TabIndex = 2;
             this.enregistrer.Text = "Enregistrer";
             this.enregistrer.UseVisualStyleBackColor = false;
@@ -122,6 +122,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifierFamille";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ModifierFamille_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichier = new System.Windows.Forms.ToolStripMenuItem();
-            this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.deconnexion = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +39,7 @@
             this.restorerLaBaseDeDonneesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exporterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.structure = new System.Windows.Forms.ToolStripMenuItem();
             this.familleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,6 @@
             this.parMaterielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parFamillesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rupturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enRuptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ruptureProcheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aide = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,16 +70,16 @@
             this.aide});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(831, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(888, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fichier
             // 
             this.fichier.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fermerToolStripMenuItem,
             this.utilisateurToolStripMenuItem,
-            this.outils});
+            this.outils,
+            this.fermerToolStripMenuItem});
             this.fichier.ForeColor = System.Drawing.Color.White;
             this.fichier.Name = "fichier";
             this.fichier.Size = new System.Drawing.Size(60, 21);
@@ -89,18 +87,12 @@
             this.fichier.MouseLeave += new System.EventHandler(this.fichier_MouseLeave);
             this.fichier.MouseHover += new System.EventHandler(this.fichierToolStripMenuItem_MouseHover);
             // 
-            // fermerToolStripMenuItem
-            // 
-            this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fermerToolStripMenuItem.Text = "Fermer";
-            this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
-            // 
             // utilisateurToolStripMenuItem
             // 
             this.utilisateurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.connexion,
             this.deconnexion});
+            this.utilisateurToolStripMenuItem.Enabled = false;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
             this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utilisateurToolStripMenuItem.Text = "Utilisateurs";
@@ -108,14 +100,14 @@
             // connexion
             // 
             this.connexion.Name = "connexion";
-            this.connexion.Size = new System.Drawing.Size(153, 22);
+            this.connexion.Size = new System.Drawing.Size(180, 22);
             this.connexion.Text = "Connexion";
             this.connexion.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // deconnexion
             // 
             this.deconnexion.Name = "deconnexion";
-            this.deconnexion.Size = new System.Drawing.Size(153, 22);
+            this.deconnexion.Size = new System.Drawing.Size(180, 22);
             this.deconnexion.Text = "Deconnexion";
             this.deconnexion.Click += new System.EventHandler(this.deconnexion_Click);
             // 
@@ -133,30 +125,37 @@
             // sauvegarderLaBaseDeDonneesToolStripMenuItem
             // 
             this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Name = "sauvegarderLaBaseDeDonneesToolStripMenuItem";
-            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Text = "Sauvegarder";
             this.sauvegarderLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderLaBaseDeDonneesToolStripMenuItem_Click);
             // 
             // restorerLaBaseDeDonneesToolStripMenuItem
             // 
             this.restorerLaBaseDeDonneesToolStripMenuItem.Name = "restorerLaBaseDeDonneesToolStripMenuItem";
-            this.restorerLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restorerLaBaseDeDonneesToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.restorerLaBaseDeDonneesToolStripMenuItem.Text = "Restorer";
             this.restorerLaBaseDeDonneesToolStripMenuItem.Click += new System.EventHandler(this.restorerLaBaseDeDonneesToolStripMenuItem_Click);
             // 
             // importerToolStripMenuItem
             // 
             this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importerToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.importerToolStripMenuItem.Text = "Importer";
             this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
             // 
             // exporterToolStripMenuItem
             // 
             this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
-            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exporterToolStripMenuItem.Text = "Exporter";
             this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
+            // 
+            // fermerToolStripMenuItem
+            // 
+            this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fermerToolStripMenuItem.Text = "Fermer";
+            this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
             // structure
             // 
@@ -251,6 +250,7 @@
             this.statistiquesMateriauxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.parMaterielToolStripMenuItem,
             this.parFamillesToolStripMenuItem});
+            this.statistiquesMateriauxToolStripMenuItem.Enabled = false;
             this.statistiquesMateriauxToolStripMenuItem.Name = "statistiquesMateriauxToolStripMenuItem";
             this.statistiquesMateriauxToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.statistiquesMateriauxToolStripMenuItem.Text = "Statistiques Materiaux";
@@ -270,24 +270,10 @@
             // 
             // rupturesToolStripMenuItem
             // 
-            this.rupturesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.enRuptureToolStripMenuItem,
-            this.ruptureProcheToolStripMenuItem});
             this.rupturesToolStripMenuItem.Name = "rupturesToolStripMenuItem";
             this.rupturesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.rupturesToolStripMenuItem.Text = "Ruptures";
-            // 
-            // enRuptureToolStripMenuItem
-            // 
-            this.enRuptureToolStripMenuItem.Name = "enRuptureToolStripMenuItem";
-            this.enRuptureToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.enRuptureToolStripMenuItem.Text = "En Rupture";
-            // 
-            // ruptureProcheToolStripMenuItem
-            // 
-            this.ruptureProcheToolStripMenuItem.Name = "ruptureProcheToolStripMenuItem";
-            this.ruptureProcheToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.ruptureProcheToolStripMenuItem.Text = "Rupture Proche";
+            this.rupturesToolStripMenuItem.Text = "Gestion des Ruptures";
+            this.rupturesToolStripMenuItem.Click += new System.EventHandler(this.rupturesToolStripMenuItem_Click);
             // 
             // aide
             // 
@@ -304,7 +290,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MegaStructure.Properties.Resources.Bagatelle_Valentina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(831, 451);
+            this.ClientSize = new System.Drawing.Size(888, 606);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -336,8 +322,6 @@
         private System.Windows.Forms.ToolStripMenuItem parMaterielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem parFamillesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rupturesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enRuptureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ruptureProcheToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connexion;
         private System.Windows.Forms.ToolStripMenuItem deconnexion;
         private System.Windows.Forms.ToolStripMenuItem gestionDesHSToolStripMenuItem;

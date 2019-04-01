@@ -125,6 +125,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConnexionUtilisateur";
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConnexionUtilisateur_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

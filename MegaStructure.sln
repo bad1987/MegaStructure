@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaStructure", "MegaStructure\MegaStructure.csproj", "{56666257-5BA4-481B-8638-D385AECB274C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Mega Structure Installer", "Mega Structure Installer\Mega Structure Installer.vdproj", "{B15C312E-6D0E-4E34-823C-4D78DD4803FB}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Mega Structure Setup", "Mega Structure Setup\Mega Structure Setup.vdproj", "{22B368B8-D849-4BCD-AAB5-7F44F3E66127}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{56666257-5BA4-481B-8638-D385AECB274C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{56666257-5BA4-481B-8638-D385AECB274C}.Release|x64.ActiveCfg = Release|x64
 		{56666257-5BA4-481B-8638-D385AECB274C}.Release|x64.Build.0 = Release|x64
-		{B15C312E-6D0E-4E34-823C-4D78DD4803FB}.Debug|Any CPU.ActiveCfg = Debug
-		{B15C312E-6D0E-4E34-823C-4D78DD4803FB}.Debug|x64.ActiveCfg = Debug
-		{B15C312E-6D0E-4E34-823C-4D78DD4803FB}.Release|Any CPU.ActiveCfg = Release
-		{B15C312E-6D0E-4E34-823C-4D78DD4803FB}.Release|x64.ActiveCfg = Release
+		{22B368B8-D849-4BCD-AAB5-7F44F3E66127}.Debug|Any CPU.ActiveCfg = Debug
+		{22B368B8-D849-4BCD-AAB5-7F44F3E66127}.Debug|x64.ActiveCfg = Debug
+		{22B368B8-D849-4BCD-AAB5-7F44F3E66127}.Release|Any CPU.ActiveCfg = Release
+		{22B368B8-D849-4BCD-AAB5-7F44F3E66127}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

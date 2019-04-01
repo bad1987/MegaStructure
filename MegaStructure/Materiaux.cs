@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -150,6 +151,85 @@ namespace MegaStructure
                 {
 
                 }
+            }
+        }
+
+        object misValue = System.Reflection.Missing.Value;
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            if (listeMateriauxDatagrid.RowCount > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel._Workbook xlworkbook;
+                Microsoft.Office.Interop.Excel._Worksheet xlworksheet;
+
+                //check if excel is install
+                if (xlapp == null)
+                {
+                    MessageBox.Show("Excel n'est pas correctement installe sur votre ordinateur");
+                    return;
+                }
+
+                //new book
+                xlworkbook = (Microsoft.Office.Interop.Excel._Workbook)(xlapp.Workbooks.Add(misValue));
+                xlworksheet = (Microsoft.Office.Interop.Excel._Worksheet)xlworkbook.ActiveSheet;
+
+                //adding table header
+                xlworksheet.Cells[1, 1] = "LISTING DES MATERIAUX";
+
+                xlworksheet.Range["A1", "D3"].Merge();
+                xlworksheet.Range["A1", "D3"].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                xlworksheet.Range["A1", "D3"].Font.Bold = true;
+                xlworksheet.Range["A1", "D3"].Font.Size = 16;
+                xlworksheet.Range["A1", "D3"].EntireColumn.AutoFit();
+
+                xlworksheet.Range["A4", "D4"].Merge();
+
+
+                for (int i = 1; i < listeMateriauxDatagrid.ColumnCount; i++)
+                {
+                    xlworksheet.Cells[5, i] = listeMateriauxDatagrid.Columns[i].HeaderText;
+                }
+
+                xlworksheet.Range["A5", "D5"].Font.Bold = true;
+
+                for (int i = 0; i < listeMateriauxDatagrid.RowCount; i++)
+                {
+                    for (int j = 1; j < listeMateriauxDatagrid.ColumnCount; j++)
+                    {
+                        if (j > 1)
+                        {
+                            if (listeMateriauxDatagrid.Rows[i].Cells[j].Value != null)
+                            {
+                                xlworksheet.Cells[i + 6, j] = Double.Parse(listeMateriauxDatagrid.Rows[i].Cells[j].Value.ToString(), CultureInfo.InvariantCulture);
+                            }
+
+                        }
+                        else
+                        {
+                            xlworksheet.Cells[i + 6, j] = listeMateriauxDatagrid.Rows[i].Cells[j].Value;
+                        }
+
+                    }
+                }
+
+                //string col = $"A{dataGridView1.RowCount - 2}";
+                string col = $"A{listeMateriauxDatagrid.RowCount + 5}";
+                xlworksheet.Range["A1", col].EntireColumn.AutoFit();
+                xlworksheet.Range["A1", $"B{listeMateriauxDatagrid.RowCount + 5}"].EntireColumn.AutoFit();
+
+                xlworksheet.Columns[1].ColumnWidth = 40;
+                xlworksheet.Columns[2].ColumnWidth = 20;
+                xlworksheet.Columns[3].ColumnWidth = 20;
+
+                xlworksheet.Range["A:A"].Style.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+                xlapp.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Error!! aucune donnee pour l'importation", "Erreur d'importation", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -20,15 +20,23 @@ namespace MegaStructure
 
         public DatabaseLite()
         {
-            filePath = Environment.CurrentDirectory;
+            //filePath = Environment.CurrentDirectory;
+            filePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            filePath = Path.Combine(filePath, "MegaStructure");
+            
             filePath = Path.Combine(filePath, "database");
+            if (!Directory.Exists(filePath))
+            {
+                //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
+                Directory.CreateDirectory(filePath);
+            }
             databaseName = Path.Combine(filePath, "megaStructure.sqlite");
             backupName = Path.Combine(filePath, "megaStructure.backup");
             cancelRestore = Path.Combine(filePath, "beforeRestore.backup");
         }
-
         public void initDatabase()
         {
+            //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Check database", MessageBoxButtons.OK);
             try
             {
                 if (File.Exists(databaseName))
@@ -100,14 +108,14 @@ namespace MegaStructure
 
         public void createAll()
         {
-            MessageBox.Show("creation des tables", "database", MessageBoxButtons.OK);
+            //MessageBox.Show("creation des tables", "database", MessageBoxButtons.OK);
             createTableUtilisateurs();
             createTableFamille();
             createTableMateriel();
             createTableDepot();
             createTableMatStock();
             createTableLigneMouvement();
-            MessageBox.Show("toute les tables ont ete crees", "Check database", MessageBoxButtons.OK);
+            //MessageBox.Show("toute les tables ont ete crees", "Check database", MessageBoxButtons.OK);
         }
 
         public void createTableUtilisateurs()
@@ -422,7 +430,15 @@ namespace MegaStructure
             {
                 String filename = Path.GetFileName(backupName),exported;
                 exported = Path.Combine(folderobject.SelectedPath, filename);
-                File.Copy(backupName, exported);
+                try
+                {
+                    File.Copy(backupName, exported, true);
+                }
+                catch
+                {
+                    File.Delete(exported);
+                    File.Copy(backupName, exported, true);
+                }
                 MessageBox.Show("exportation de la base de donnees terminee","exportation de la bd", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listeDepotDatagrid = new System.Windows.Forms.DataGridView();
-            this.ouvrirDepot = new System.Windows.Forms.Button();
-            this.nouveauDepot = new System.Windows.Forms.Button();
-            this.fermerDepot = new System.Windows.Forms.Button();
             this.ref_depot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IntiDepot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.villeDepot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ouvrirDepot = new System.Windows.Forms.Button();
+            this.nouveauDepot = new System.Windows.Forms.Button();
+            this.fermerDepot = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listeDepotDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,19 +46,19 @@
             // 
             this.listeDepotDatagrid.AllowUserToAddRows = false;
             this.listeDepotDatagrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listeDepotDatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.listeDepotDatagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.listeDepotDatagrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listeDepotDatagrid.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listeDepotDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listeDepotDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listeDepotDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listeDepotDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ref_depot,
@@ -68,20 +68,43 @@
             this.listeDepotDatagrid.Location = new System.Drawing.Point(12, 12);
             this.listeDepotDatagrid.Name = "listeDepotDatagrid";
             this.listeDepotDatagrid.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listeDepotDatagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listeDepotDatagrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.listeDepotDatagrid.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.listeDepotDatagrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.listeDepotDatagrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.listeDepotDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listeDepotDatagrid.Size = new System.Drawing.Size(324, 275);
             this.listeDepotDatagrid.TabIndex = 0;
+            // 
+            // ref_depot
+            // 
+            this.ref_depot.HeaderText = "Reference";
+            this.ref_depot.Name = "ref_depot";
+            this.ref_depot.ReadOnly = true;
+            this.ref_depot.Visible = false;
+            // 
+            // IntiDepot
+            // 
+            this.IntiDepot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IntiDepot.HeaderText = "Intitule";
+            this.IntiDepot.Name = "IntiDepot";
+            this.IntiDepot.ReadOnly = true;
+            this.IntiDepot.Width = 150;
+            // 
+            // villeDepot
+            // 
+            this.villeDepot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.villeDepot.HeaderText = "Adresse";
+            this.villeDepot.Name = "villeDepot";
+            this.villeDepot.ReadOnly = true;
+            this.villeDepot.Width = 170;
             // 
             // ouvrirDepot
             // 
@@ -137,29 +160,6 @@
             this.fermerDepot.UseVisualStyleBackColor = false;
             this.fermerDepot.Click += new System.EventHandler(this.fermerDepot_Click);
             // 
-            // ref_depot
-            // 
-            this.ref_depot.HeaderText = "Reference";
-            this.ref_depot.Name = "ref_depot";
-            this.ref_depot.ReadOnly = true;
-            this.ref_depot.Visible = false;
-            // 
-            // IntiDepot
-            // 
-            this.IntiDepot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.IntiDepot.HeaderText = "Intitule";
-            this.IntiDepot.Name = "IntiDepot";
-            this.IntiDepot.ReadOnly = true;
-            this.IntiDepot.Width = 150;
-            // 
-            // villeDepot
-            // 
-            this.villeDepot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.villeDepot.HeaderText = "Adresse";
-            this.villeDepot.Name = "villeDepot";
-            this.villeDepot.ReadOnly = true;
-            this.villeDepot.Width = 170;
-            // 
             // Depots
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +177,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Depots";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Depots_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listeDepotDatagrid)).EndInit();
             this.ResumeLayout(false);
