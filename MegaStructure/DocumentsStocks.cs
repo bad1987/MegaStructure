@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,10 +23,14 @@ namespace MegaStructure
         private String dateFinFiltre;
         private int choixDocument;
         private int formLoaded;
+        private CultureInfo decimalSeprerator;
+
 
         public DocumentsStocks()
         {
             InitializeComponent();
+            decimalSeprerator = new CultureInfo("us-US");
+            Thread.CurrentThread.CurrentCulture = decimalSeprerator;
             lite = new DatabaseLite();
             lite.creatConnection();
             dateDebutFiltre = DateTime.Now.AddYears(-1).Date.ToString("yyyy-MM-dd");
@@ -40,11 +46,10 @@ namespace MegaStructure
             //filtre.ShowDialog();
             if(filtre.ShowDialog() == DialogResult.Cancel)
             {
-                MessageBox.Show("filter canceled");
+                //MessageBox.Show("filter canceled");
             }
             else
             {
-                MessageBox.Show("after the execution of the filter");
                 dateDebutFiltre = filtre.getDateDebut();
                 dateFinFiltre = filtre.getDateFin();
                 cancel.Visible = true;

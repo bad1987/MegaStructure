@@ -51,8 +51,6 @@
             this.sortieHSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etat = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesMateriauxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parMaterielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parFamillesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rupturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aide = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -92,22 +90,21 @@
             this.utilisateurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.connexion,
             this.deconnexion});
-            this.utilisateurToolStripMenuItem.Enabled = false;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.utilisateurToolStripMenuItem.Text = "Utilisateurs";
             // 
             // connexion
             // 
             this.connexion.Name = "connexion";
-            this.connexion.Size = new System.Drawing.Size(180, 22);
+            this.connexion.Size = new System.Drawing.Size(153, 22);
             this.connexion.Text = "Connexion";
             this.connexion.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // deconnexion
             // 
             this.deconnexion.Name = "deconnexion";
-            this.deconnexion.Size = new System.Drawing.Size(180, 22);
+            this.deconnexion.Size = new System.Drawing.Size(153, 22);
             this.deconnexion.Text = "Deconnexion";
             this.deconnexion.Click += new System.EventHandler(this.deconnexion_Click);
             // 
@@ -119,7 +116,7 @@
             this.importerToolStripMenuItem,
             this.exporterToolStripMenuItem});
             this.outils.Name = "outils";
-            this.outils.Size = new System.Drawing.Size(180, 22);
+            this.outils.Size = new System.Drawing.Size(142, 22);
             this.outils.Text = "Outils";
             // 
             // sauvegarderLaBaseDeDonneesToolStripMenuItem
@@ -153,7 +150,7 @@
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.fermerToolStripMenuItem.Text = "Fermer";
             this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
@@ -247,26 +244,10 @@
             // 
             // statistiquesMateriauxToolStripMenuItem
             // 
-            this.statistiquesMateriauxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parMaterielToolStripMenuItem,
-            this.parFamillesToolStripMenuItem});
-            this.statistiquesMateriauxToolStripMenuItem.Enabled = false;
             this.statistiquesMateriauxToolStripMenuItem.Name = "statistiquesMateriauxToolStripMenuItem";
             this.statistiquesMateriauxToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.statistiquesMateriauxToolStripMenuItem.Text = "Statistiques Materiaux";
-            // 
-            // parMaterielToolStripMenuItem
-            // 
-            this.parMaterielToolStripMenuItem.Name = "parMaterielToolStripMenuItem";
-            this.parMaterielToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.parMaterielToolStripMenuItem.Text = "Par Materiaux";
-            this.parMaterielToolStripMenuItem.Click += new System.EventHandler(this.parMaterielToolStripMenuItem_Click);
-            // 
-            // parFamillesToolStripMenuItem
-            // 
-            this.parFamillesToolStripMenuItem.Name = "parFamillesToolStripMenuItem";
-            this.parFamillesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.parFamillesToolStripMenuItem.Text = "Par Familles";
+            this.statistiquesMateriauxToolStripMenuItem.Click += new System.EventHandler(this.statistiquesMateriauxToolStripMenuItem_Click);
             // 
             // rupturesToolStripMenuItem
             // 
@@ -319,8 +300,6 @@
         private System.Windows.Forms.ToolStripMenuItem etat;
         private System.Windows.Forms.ToolStripMenuItem documentsDeStockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statistiquesMateriauxToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parMaterielToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem parFamillesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rupturesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connexion;
         private System.Windows.Forms.ToolStripMenuItem deconnexion;

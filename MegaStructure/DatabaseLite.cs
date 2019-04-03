@@ -34,6 +34,12 @@ namespace MegaStructure
             backupName = Path.Combine(filePath, "megaStructure.backup");
             cancelRestore = Path.Combine(filePath, "beforeRestore.backup");
         }
+
+        public string stripString(string enter)
+        {
+            return enter.Replace("'", "''");
+        }
+
         public void initDatabase()
         {
             //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "Check database", MessageBoxButtons.OK);
@@ -71,6 +77,7 @@ namespace MegaStructure
                 //String massage = "A connection to this database already exist";
                 //MessageBox.Show(massage, "Database connection", MessageBoxButtons.OK);
             }
+            ajoutColonne();
         }
 
         public void creatConnection()
@@ -87,10 +94,6 @@ namespace MegaStructure
                 conn.Close();
             }
             catch
-            {
-
-            }
-            finally
             {
 
             }
@@ -184,10 +187,70 @@ namespace MegaStructure
                     (MA_NO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                         MA_DESIGN VARCHAR(200) NOT NULL,MA_DATE TEXT,
                         FA_CODE VARCHAR(100),
+                        MA_SUIVISTOCK INTEGER NOT NULL DEFAULT 1,
                         FOREIGN KEY(FA_CODE) REFERENCES F_FAMILLE(FA_CODE))
                 ";
             SQLiteCommand cmd = new SQLiteCommand(request, this.conn);
             cmd.ExecuteNonQuery();
+        }
+
+        public void ajoutColonne()
+        {
+            creatConnection();
+            String request = @"
+                    ALTER TABLE F_MATERIEL ADD COLUMN MA_SUIVISTOCK INTEGER DEFAULT 1   
+            ";
+            request = String.Format(request, databaseName);
+
+            String request2 = @"PRAGMA table_info(F_MATERIEL)";
+            String request3 = @"SELECT MA_SUIVISTOCK FROM F_MATERIEL";
+
+            SQLiteCommand cmd = new SQLiteCommand(request2, this.conn);
+            //cmd.ExecuteNonQuery();
+
+            Boolean exists = false;
+            using (SQLiteDataReader dr = cmd.ExecuteReader())
+            {
+                int nameIndex = dr.GetOrdinal("NAME");
+                while(dr.Read())
+                {
+                    if (dr.GetString(nameIndex).Equals("MA_SUIVISTOCK"))
+                    {
+                        exists = true;
+                        break;
+                    }
+                    //MessageBox.Show(dr.GetString(nameIndex));
+                }
+                                
+            }
+            cmd.Dispose();
+            if (!exists)
+            {
+                using(cmd = new SQLiteCommand(request, this.conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                //MessageBox.Show("La colonne n'existe pas encore");
+            }
+        }
+
+        public int getMaterielTypeSuivi(int art_ref)
+        {
+            string request = "SELECT MA_SUIVISTOCK FROM F_MATERIEL WHERE MA_NO = {0}";
+            request = string.Format(request, art_ref);
+            creatConnection();
+            int suivi = 0;
+            using(SQLiteCommand cmd = new SQLiteCommand(request, this.conn))
+            {
+                using(SQLiteDataReader dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        suivi = dr.GetInt32(0);
+                    }
+                }
+            }
+            return suivi;
         }
 
         public void createTableDepot()
@@ -236,6 +299,7 @@ namespace MegaStructure
             SQLiteCommand cmd = new SQLiteCommand(request, this.conn);
             cmd.ExecuteNonQuery();
         }
+        
 
         public void createUser()
         {

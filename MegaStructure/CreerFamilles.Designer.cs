@@ -155,7 +155,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreerFamilles";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreerFamilles_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

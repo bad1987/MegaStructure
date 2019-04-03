@@ -179,7 +179,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Familles";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Familles_FormClosing);
             this.Load += new System.EventHandler(this.Familles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listefamilleDatagrid)).EndInit();

@@ -235,7 +235,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Materiaux";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Materiaux_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.listeMateriauxDatagrid)).EndInit();
             this.ResumeLayout(false);

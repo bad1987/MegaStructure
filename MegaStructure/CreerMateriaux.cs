@@ -15,36 +15,47 @@ namespace MegaStructure
     {
         private DatabaseLite lite;
         private DataTable listeFamille;
+        private DataTable typesuivi;
         public CreerMateriaux()
         {
             InitializeComponent();
             lite = new DatabaseLite();
             lite.creatConnection();
             listeFamille = new DataTable();
-            listeFamille.Columns.Add("reference",typeof(Int64));
+            listeFamille.Columns.Add("reference",typeof(int));
             listeFamille.Columns.Add("designation",typeof(String));
             listeFamille.Rows.Add(-1,"");
             initFamille();
             artFamille.DataSource = listeFamille;
             artFamille.DisplayMember = "designation";
             artFamille.ValueMember = "reference";
+
+            typesuivi = new DataTable();
+            typesuivi.Columns.Add("reference", typeof(int));
+            typesuivi.Columns.Add("designation", typeof(String));
+            typesuivi.Rows.Add(1, "Entree/Sortie");
+            typesuivi.Rows.Add(2, "Sortie Uniquement");
+            suivistock.DataSource = typesuivi;
+            suivistock.DisplayMember = "designation";
+            suivistock.ValueMember = "reference";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String designM = artDesign.Text;
+            String designM = lite.stripString(artDesign.Text);
             if( designM == "" ||artFamille.Text == "")
             {
                 MessageBox.Show("Tous les champs doivent etre remplis", "champ invalide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             long refFamille = long.Parse(listeFamille.Rows[artFamille.SelectedIndex][0].ToString());
-            String designArt = artDesign.Text;
+            int choixsuivi = int.Parse(typesuivi.Rows[suivistock.SelectedIndex][0].ToString());
+            String designArt = lite.stripString(artDesign.Text);
             String date = DateTime.Now.Date.ToString("yyyy-MM-dd");
-            String request = @"INSERT INTO F_MATERIEL (MA_DESIGN,MA_DATE,FA_CODE) 
-                        VALUES('{0}','{1}','{2}')
+            String request = @"INSERT INTO F_MATERIEL (MA_DESIGN,MA_DATE,FA_CODE,MA_SUIVISTOCK) 
+                        VALUES('{0}','{1}',{2},{3})
                     ";
-            request = String.Format(request, designArt.ToUpper(), date, refFamille);
+            request = String.Format(request, designArt.ToUpper(), date, refFamille,choixsuivi);
 
 
             SQLiteCommand cmd = new SQLiteCommand(request, lite.getConnector());

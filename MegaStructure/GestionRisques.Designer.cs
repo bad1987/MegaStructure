@@ -203,7 +203,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GestionRisques";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.GestionRisques_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

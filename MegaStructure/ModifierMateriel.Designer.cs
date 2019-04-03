@@ -36,6 +36,8 @@
             this.famille = new System.Windows.Forms.ComboBox();
             this.enregistrer = new System.Windows.Forms.Button();
             this.annuler = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.suivistock = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +55,7 @@
             this.matref.Enabled = false;
             this.matref.Location = new System.Drawing.Point(120, 43);
             this.matref.Name = "matref";
-            this.matref.Size = new System.Drawing.Size(125, 26);
+            this.matref.Size = new System.Drawing.Size(188, 26);
             this.matref.TabIndex = 0;
             // 
             // label2
@@ -100,7 +102,7 @@
             this.enregistrer.FlatAppearance.BorderSize = 2;
             this.enregistrer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.enregistrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enregistrer.Location = new System.Drawing.Point(136, 201);
+            this.enregistrer.Location = new System.Drawing.Point(135, 231);
             this.enregistrer.Name = "enregistrer";
             this.enregistrer.Size = new System.Drawing.Size(87, 32);
             this.enregistrer.TabIndex = 3;
@@ -115,24 +117,45 @@
             this.annuler.FlatAppearance.BorderSize = 2;
             this.annuler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.annuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.annuler.Location = new System.Drawing.Point(254, 201);
+            this.annuler.Location = new System.Drawing.Point(253, 231);
             this.annuler.Name = "annuler";
             this.annuler.Size = new System.Drawing.Size(75, 32);
             this.annuler.TabIndex = 4;
             this.annuler.Text = "Annuler";
             this.annuler.UseVisualStyleBackColor = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Suivi en Stock";
+            // 
+            // suivistock
+            // 
+            this.suivistock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.suivistock.FormattingEnabled = true;
+            this.suivistock.Location = new System.Drawing.Point(120, 167);
+            this.suivistock.Name = "suivistock";
+            this.suivistock.Size = new System.Drawing.Size(188, 27);
+            this.suivistock.TabIndex = 2;
+            // 
             // ModifierMateriel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(450, 245);
+            this.ClientSize = new System.Drawing.Size(450, 275);
             this.Controls.Add(this.annuler);
             this.Controls.Add(this.enregistrer);
+            this.Controls.Add(this.suivistock);
             this.Controls.Add(this.famille);
             this.Controls.Add(this.matdesign);
             this.Controls.Add(this.matref);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -145,7 +168,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier les informations du materiel";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.ModifierMateriel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,5 +184,7 @@
         private System.Windows.Forms.ComboBox famille;
         private System.Windows.Forms.Button enregistrer;
         private System.Windows.Forms.Button annuler;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox suivistock;
     }
 }

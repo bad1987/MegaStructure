@@ -317,7 +317,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "DocumentsStocks";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.DocumentsStocks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ligneStock)).EndInit();
             this.panel1.ResumeLayout(false);

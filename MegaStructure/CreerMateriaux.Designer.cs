@@ -35,6 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.artFamille = new System.Windows.Forms.ComboBox();
             this.fermer = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.suivistock = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 95);
+            this.label3.Location = new System.Drawing.Point(72, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 0;
@@ -74,20 +76,22 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.suivistock);
             this.panel1.Controls.Add(this.artFamille);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.artDesign);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 191);
+            this.panel1.Size = new System.Drawing.Size(673, 219);
             this.panel1.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(443, 149);
+            this.button1.Location = new System.Drawing.Point(441, 173);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 28);
             this.button1.TabIndex = 4;
@@ -101,7 +105,7 @@
             this.artFamille.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.artFamille.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.artFamille.FormattingEnabled = true;
-            this.artFamille.Location = new System.Drawing.Point(139, 96);
+            this.artFamille.Location = new System.Drawing.Point(139, 93);
             this.artFamille.Name = "artFamille";
             this.artFamille.Size = new System.Drawing.Size(278, 25);
             this.artFamille.TabIndex = 2;
@@ -111,7 +115,7 @@
             // 
             this.fermer.BackColor = System.Drawing.SystemColors.Highlight;
             this.fermer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fermer.Location = new System.Drawing.Point(592, 221);
+            this.fermer.Location = new System.Drawing.Point(592, 248);
             this.fermer.Name = "fermer";
             this.fermer.Size = new System.Drawing.Size(93, 28);
             this.fermer.TabIndex = 5;
@@ -119,12 +123,33 @@
             this.fermer.UseVisualStyleBackColor = false;
             this.fermer.Click += new System.EventHandler(this.fermer_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Suivi en Stock";
+            // 
+            // suivistock
+            // 
+            this.suivistock.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.suivistock.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suivistock.FormattingEnabled = true;
+            this.suivistock.Location = new System.Drawing.Point(139, 143);
+            this.suivistock.Name = "suivistock";
+            this.suivistock.Size = new System.Drawing.Size(173, 25);
+            this.suivistock.TabIndex = 2;
+            this.suivistock.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artFamille_KeyDown);
+            // 
             // CreerMateriaux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(697, 261);
+            this.ClientSize = new System.Drawing.Size(697, 288);
             this.Controls.Add(this.fermer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -134,7 +159,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreerMateriaux";
-            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -149,5 +173,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox artFamille;
         private System.Windows.Forms.Button fermer;
+        private System.Windows.Forms.ComboBox suivistock;
+        private System.Windows.Forms.Label label1;
     }
 }

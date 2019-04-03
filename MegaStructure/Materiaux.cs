@@ -62,7 +62,7 @@ namespace MegaStructure
             listeMateriauxDatagrid.Rows.Clear();
             SQLiteConnection conn = lite.getConnector();
             String request = @"SELECT * FROM F_MATERIEL WHERE MA_DESIGN LIKE '%{0}%'";
-            request = String.Format(request, motif);
+            request = String.Format(request, lite.stripString(motif));
             String[] rows;
             using (SQLiteCommand cmd = new SQLiteCommand(request, conn))
             {

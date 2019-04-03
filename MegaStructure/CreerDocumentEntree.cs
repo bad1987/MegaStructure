@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,10 +19,16 @@ namespace MegaStructure
         private DatabaseLite lite;
         private DataTable listeMateriaux,listeDepots;
         private int typePiece;
+        private CultureInfo decimalSeprerator;
+        private int artSuivi;
 
         public CreerDocumentEntree(int piece = 0)
         {
             InitializeComponent();
+
+            decimalSeprerator = new CultureInfo("us-US");
+            Thread.CurrentThread.CurrentCulture = decimalSeprerator;
+
             lite = new DatabaseLite();
             lite.creatConnection();
 
@@ -44,6 +52,24 @@ namespace MegaStructure
             this.typePiece = piece;
             initField();
             //materiel.SelectedIndex = -1;
+
+            changeTitle();
+        }
+
+        private void changeTitle()
+        {
+            if(typePiece == 1)
+            {
+                Text = "Document d'Entree";
+            }
+            else if(typePiece == 2)
+            {
+                Text = "Document de Sortie";
+            }
+            else
+            {
+                Text = "Document de Retour";
+            }
         }
 
         public void initField()
@@ -155,7 +181,14 @@ namespace MegaStructure
                     //mouvement d'entree ou de retour = addition; mouvement de sortie = soustraction
                     if (typePiece == 2)
                     {
-                        qte = qteactuelle - docquant;
+                        if(artSuivi == 1)// mode de suivi en stock = entree/sortie
+                        {
+                            qte = qteactuelle - docquant;
+                        }
+                        else
+                        {
+                            qte = qteactuelle + docquant;
+                        }
                     }
                     else
                     {
@@ -180,7 +213,14 @@ namespace MegaStructure
                     }
                     else
                     {
-                        matStockInsertion(docmate, depot, minqte, qte);
+                        if(artSuivi == 1)
+                        {
+                            matStockInsertion(docmate, depot, minqte, qte);
+                        }
+                        else
+                        {
+                            matStockInsertion(docmate, depot, 0, qte);
+                        }
                     }
 
                     //insertion dans ligneMouvement
@@ -199,9 +239,17 @@ namespace MegaStructure
             }
 
             Double qtereelle = getQuantiteReelle(int.Parse(listeMateriaux.Rows[materiel.SelectedIndex][0].ToString())),qte;
-            qte = Double.Parse(quantite.Text);
+            int artIndex = int.Parse(listeMateriaux.Rows[materiel.SelectedIndex][0].ToString());
+            artSuivi = lite.getMaterielTypeSuivi(artIndex);
+            if (artSuivi == 2 && (typePiece == 1 || typePiece == 3))
+            {
+                MessageBox.Show("Le type de mouvement choisi n'est pas autorise pour ce materiel", "Mouvement non autorise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            if(typePiece == 2 && qtereelle < qte)
+            qte = Double.Parse(quantite.Text.Replace(",", "."));
+
+            if(typePiece == 2 && qtereelle < qte && artSuivi == 1)
             {
                 MessageBox.Show("l'etat du stock n'autorise pas la quantite saisie", "erreur sur la quantite saisie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -211,7 +259,7 @@ namespace MegaStructure
             String item = listeMateriaux.Rows[materiel.SelectedIndex][1].ToString();
             rows[0] = listeMateriaux.Rows[materiel.SelectedIndex][0].ToString();
             rows[1] = listeMateriaux.Rows[materiel.SelectedIndex][1].ToString();
-            rows[2] = quantite.Text;
+            rows[2] = quantite.Text.Replace(",", ".");
             rows[3] = motif.Text;
 
             materiauxDatagrid.Rows.Add(rows);
@@ -315,6 +363,7 @@ namespace MegaStructure
 
         public void ligneMouvInsertion(Double mo_qte,int mo_type,String mo_date,String mo_piece,String mo_motif,int ma_no,int de_no)
         {
+            mo_motif = lite.stripString(mo_motif);
             String request = @"
                 INSERT INTO F_LIGNEMOUVEMENT (MO_QTE,MO_DATE,MO_TYPE,MO_PIECE,MO_MOTIF,MA_NO,DE_NO)
                 VALUES({0},'{1}',{2},'{3}','{4}',{5},{6})

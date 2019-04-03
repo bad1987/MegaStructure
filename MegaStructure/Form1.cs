@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,13 +35,15 @@ namespace MegaStructure
         //position
         private int X, Y;
 
+        private CultureInfo decimalSeprerator;
+
         public Form1()
         {
             InitializeComponent();
             lite = new DatabaseLite();
             lite.initDatabase();
-            connection();
-            //connectedUser();
+            //connection();
+            connectedUser();
 
             //init objects
             fa = null;
@@ -57,6 +61,9 @@ namespace MegaStructure
 
             menuStrip1.BackColor = Color.Black;
             menuStrip1.ForeColor = Color.White;
+
+            decimalSeprerator = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentCulture = decimalSeprerator;
         }
 
         public void closeAllForms()
@@ -367,6 +374,12 @@ namespace MegaStructure
         private void importerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lite.importer();
+        }
+
+        private void statistiquesMateriauxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatsParMateriaux statsmat = new StatsParMateriaux();
+            statsmat.Show();
         }
 
         private void rupturesToolStripMenuItem_Click(object sender, EventArgs e)

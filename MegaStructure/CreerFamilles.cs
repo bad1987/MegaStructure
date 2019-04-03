@@ -39,7 +39,7 @@ namespace MegaStructure
                 return;
             }
 
-            lite.createFamille(familleRef.Text.ToUpper(), familleDesign.Text.ToUpper());
+            lite.createFamille(lite.stripString(familleRef.Text.ToUpper()), lite.stripString(familleDesign.Text.ToUpper()));
             familleRef.Text = "";
             familleDesign.Text = "";
             ActiveControl = familleRef;

@@ -177,7 +177,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Depots";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Depots_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listeDepotDatagrid)).EndInit();
             this.ResumeLayout(false);

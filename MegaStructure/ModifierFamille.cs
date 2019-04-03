@@ -42,9 +42,9 @@ namespace MegaStructure
 
         public void updatefamille()
         {
-            String design = designfam.Text.ToUpper();
+            String design = lite.stripString(designfam.Text.ToUpper());
             String request = @"UPDATE F_FAMILLE SET FA_INTITULE = '{0}', FA_CODE='{1}' WHERE FA_CODE = '{2}'";
-            request = string.Format(request, design, fa_code,fa_code);
+            request = string.Format(request, design, lite.stripString(fa_code), lite.stripString(fa_code));
 
             using (SQLiteCommand cmd = new SQLiteCommand(request, lite.getConnector()))
             {

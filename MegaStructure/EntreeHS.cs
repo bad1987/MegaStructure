@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,12 +20,16 @@ namespace MegaStructure
         private String mo_piece;
         private int de_no,mo_type;
         private traitementHS traitement;
+        private CultureInfo decimalSeprerator;
 
         public EntreeHS()
         {
             InitializeComponent();
             lite = new DatabaseLite();
             lite.creatConnection();
+
+            decimalSeprerator = new CultureInfo("us-US");
+            Thread.CurrentThread.CurrentCulture = decimalSeprerator;
 
             traitement = new traitementHS();
 
@@ -78,7 +83,7 @@ namespace MegaStructure
 
             try
             {
-                quantite = double.Parse(qteHs.Text,CultureInfo.InvariantCulture);
+                quantite = double.Parse(qteHs.Text.Replace(",","."));
                 if(quantite <= 0)
                 {
                     MessageBox.Show("Quantite saisie non valide,une quantite positive est attendue", "Quantite incorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
